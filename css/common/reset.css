@@ -26,13 +26,6 @@ body {
   -ms-text-size-adjust: none;
 }
 
-/* img, 
-video, 
-svg {
-  display: block;
-  max-width: 100%;
-} */
-
 a {
   text-decoration: none;
 }

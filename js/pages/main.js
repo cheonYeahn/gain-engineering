@@ -57,7 +57,7 @@ const animationGrayScale = (item) => {
     trigger: item,
     start: "top 50%",
     end: "bottom 50%",
-    onEnter: () => {gsap.to(item, {filter: "grayscale(0)", duration: 1, ease: "expo"});},
+    onEnter: () => {gsap.to(item, {filter: "grayscale(0)", duration: 0.8, ease: "expo"});},
     onLeaveBack: () => {item.style.filter = "grayscale(1)";},
   });
   
