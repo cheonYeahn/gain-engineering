@@ -1,0 +1,104 @@
+#sitemap::after,
+#sitemap .gnb .depth2 > li:not(:last-child)::after {
+  content: '';
+}
+
+/* sitemap 시작 */
+#sitemap a {
+  display: block;
+}
+
+#sitemap,
+#sitemap .gnb .depth1 > li,
+#sitemap .gnb .depth2,
+.sns {
+  display: flex;
+  align-items: center;
+}
+
+#sitemap {
+  width: 100%;
+  height: 100dvh;
+  justify-content: space-between;
+  background-color: var(--color-primary7);
+  color: var(--color-primary3);
+}
+
+#sitemap.bgLogo::after {
+  width: 30vw;
+  bottom: 0;
+  right: 0;
+}
+
+#sitemap .gnb {
+  width: 100%;
+  height: fit-content;
+}
+
+#sitemap .gnb .depth1 > li:not(:last-child){
+  margin-bottom: var(--size-60);
+}
+
+#sitemap .gnb .depth1 > li > a {
+  width: 30%;
+  font-size: var(--size-40);
+  font-weight: var(--font-weight-bold);
+}
+
+#sitemap .gnb .depth1 > li:hover > a,
+#sitemap .gnb .depth2 > li > a:hover {
+  color: #fff;
+}
+
+#sitemap .gnb .depth2 {
+  gap: 0.5rem;
+}
+
+#sitemap .gnb .depth2 > li {
+  position: relative;
+}
+
+#sitemap .gnb .depth2 > li:not(:last-child)::after {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -0.25rem;
+  width: 1px;
+  height: 80%;
+  background-color: var(--color-primary3);
+}
+
+#sitemap .gnb .depth2 > li > a {
+  padding: 0.5rem var(--size-14);
+  font-size: var(--size-18);
+}
+
+.sns {
+  position: absolute;
+  bottom: var(--size-80);
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 1rem;
+}
+
+.sns li {
+  width: 55px;
+  height: 55px;
+  padding: 0.5rem;
+  border: 1px solid #fff;
+  border-radius: 100%;
+}
+
+.sns li a {
+  width: var(--size-32);
+  height: var(--size-32);
+  margin: 0.1rem auto;
+  overflow: hidden;
+}
+
+.sns li a img {
+  width: 200%;
+  transform: translateX(-32px);
+}
+
+/* sitemap 끝 */
+

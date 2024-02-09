@@ -1,0 +1,394 @@
+@charset "UTF-8";
+/****** 임시 ******/
+.inner {
+  border: 1px solid #f00;
+}
+/****** 임시 ******/
+
+:root {
+  /* font-size */
+  --size-12: 0.75rem;
+  --size-14: 0.875rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-20: 1.25rem;
+  --size-24: 1.5rem;
+  --size-28: 1.75rem;
+  --size-32: 2rem;
+  --size-36: 2.25rem;
+  --size-40: 2.5rem;
+  --size-60: 3.75rem;
+  --size-80: 5rem;
+  --size-100: 6.25rem;
+  --size-140: 8.75rem;
+  --size-180: 11.25rem;
+
+  /* color */
+  --color-primary7: #424195;
+  --color-primary6: #4B4BA1;
+  --color-primary5: #5153AB;
+  --color-primary4: #696DB7;
+  --color-primary3: #8288C4;
+  --color-primary2: #A5A9D5;
+  --color-primary1: #C8CBE6;
+  --color-primaryH: #E9EAF5;
+  --color-gray9: #202123;
+  --color-gray8: #414244;
+  --color-gray7: #606163;
+  --color-gray6: #737578;
+  --color-gray5: #9C9EA1;
+  --color-gray4: #BBBDC0;
+  --color-gray3: #DEE0E3;
+  --color-gray2: #ECEEF1;
+  --color-gray1: #F3F5F8;
+}
+
+body {
+  color: var(--color-gray9);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+
+#header::after,
+#header .gnb .depth1 > li > a::after,
+address p:not(:last-child)::after,
+.inquiry-list li:not(:last-child)::after {
+  content: '';
+}
+
+.wrap,
+#header,
+#main,
+#footer,
+#header::after,
+#header .gnb .depth2,
+.hamburger span {
+  width: 100%;
+}
+
+#header .logo a,
+#footer .logo {
+  width: 250px;
+}
+
+.inner,
+#header .gnb .depth1 {
+  height: inherit;
+}
+
+#header::after,
+#header .gnb .depth2 {
+  height: 0;
+}
+
+.inner {
+  margin: 0 var(--size-180);
+}
+
+.inner,
+#header::after,
+#header a,
+#header .gnb .depth1 > li > a::after,
+#header .gnb .depth2,
+.hamburger,
+.hamburger span {
+  transition: .3s ease;
+}
+
+#header a,
+#footer a {
+  display: block;
+}
+
+.m-br_visible {
+  display: none;
+}
+
+#header .inner,
+#header .gnb .depth1,
+#footer .inner,
+address,
+.inquiry-list {
+  display: flex;
+}
+
+#header .inner,
+#footer .inner {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header .gnb .depth1 > li,
+#header .gnb .depth1 > li > a,
+.hamburger,
+address p,
+.inquiry-list li {
+  position: relative;
+}
+
+#header .gnb,
+#header .gnb .depth2,
+.hamburger span {
+  position: absolute;
+}
+
+#header::after,
+#header .gnb .depth2 {
+  top: 100%;
+}
+
+#header .gnb,
+.hamburger span {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.copyright,
+.footer-inquiry span,
+.footer-r p {
+  color: var(--color-gray5);
+}
+
+address p:not(:last-child)::after,
+.inquiry-list li:not(:last-child)::after {
+  width: 1px;
+  height: 80%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-gray5);
+}
+
+.bgLogo::after {
+  aspect-ratio: 143 / 79;
+  background: url(../../img/common/symbol.svg) no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+/* header */
+#header {
+  border-bottom: 1px solid var(--color-gray4);
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+#header::after {
+  background-color: #fff;
+  z-index: -1;
+}
+
+#header .inner {
+  height: var(--size-100);
+  margin: 0 2.813rem;
+}
+
+#header .gnb .depth1 > li {
+  padding: 0 var(--size-40);
+}
+
+#header .gnb .depth1 > li > a {
+  padding: 0 var(--size-24);
+  color: #fff;
+  font-size: var(--size-18);
+  line-height: var(--size-100);
+}
+
+#header .gnb .depth1 > li > a::after {
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary7);
+  bottom: 0;
+  right: 0;
+}
+
+#header .gnb .depth2 {
+  padding: var(--size-24) 0 0 var(--size-24);
+  left: 0;
+  overflow: hidden;
+}
+
+#header .gnb .depth2 li a {
+  padding: 0.4rem 0 0.4rem var(--size-24);
+}
+
+.hamburger {
+  width: var(--size-32);
+  height: var(--size-20);
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 2px;
+  background-color: #fff;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* 세부메뉴 보일 때 */
+#header.show-depth2::after {
+  height: 320px;
+  border-bottom: 1px solid var(--color-gray6);
+}
+
+#header.bg-white {
+  background-color: #fff;
+}
+
+#header.bg-white .gnb .depth1 > li > a {
+  color: var(--color-gray9);
+}
+
+.bg-white .hamburger span {
+  background-color: var(--color-gray9);
+}
+
+/* sitemap 보일 때 */
+#header.open-sitemap {
+  border: none;
+  background-color: none;
+}
+#header.open-sitemap .gnb {
+  display: none;
+}
+
+#header.open-sitemap .hamburger span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#header.open-sitemap .hamburger span:nth-child(2) {
+  width: 0;
+}
+
+#header.open-sitemap .hamburger span:nth-child(3) {
+  bottom: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* footer */
+#footer {
+  background-color: var(--color-gray8);
+  color: #fff;
+}
+
+#footer .inner {
+  padding: var(--size-100) 0;
+}
+
+address {
+  margin: var(--size-40) 0 0.5rem;
+  gap: var(--size-24);
+}
+
+address p:not(:last-child)::after {
+  right: -0.75rem;
+}
+
+.copyright {
+  text-transform: uppercase;
+}
+
+.inquiry-list {
+  gap: var(--size-32);
+  margin-bottom: var(--size-40);
+  font-size: var(--size-28);
+  font-weight: bold;
+}
+
+.inquiry-list li:not(:last-child)::after {
+  right: -1rem;
+}
+
+/* hover set */
+@media (hover: hover) and (pointer: fine) {
+  #header .gnb .depth1 > li:hover > a::after {
+    width: 100%;
+    left: 0;
+  }
+
+  #header .gnb .depth1 > li:hover > a,
+  #header .gnb a:hover {
+    color: var(--color-primary7);
+  }
+
+  #header .gnb .depth1 > li:hover > a::after {
+    right: 0;
+  }
+
+  .hamburger:hover {
+    height: var(--size-28);
+  }
+}
+
+/* 반응형 */
+@media (max-width:1510px) {
+  .inner,
+  #header .inner {
+    margin: 0 1rem;
+  }
+  
+  #header .gnb {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .m-br_visible {
+    display: block;
+  }
+
+  #header .inner {
+    height: 65px;
+  }
+
+  #header .logo a,
+  #footer .logo {
+    width: clamp(10rem, 40vw, 15rem);
+  }
+  
+  .hamburger {
+    width: var(--size-24);
+    height: 1rem;
+  }
+
+  #footer .inner {
+    padding: var(--size-60) 0;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--size-60);
+    font-size: clamp(var(--size-14), 2vw, 1rem);
+  }
+  
+  address {
+    margin: var(--size-18) 0 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem var(--size-24);
+  }
+  
+  address p:first-child {
+    width: 100%;
+  }
+  
+  address p:first-child::after {
+    display: none;
+  }
+
+  .inquiry-list {
+    margin-bottom: 1rem;
+    font-size: clamp(var(--size-14), 5vw, var(--size-28));
+  }
+}
