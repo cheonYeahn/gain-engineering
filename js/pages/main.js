@@ -18,7 +18,6 @@ gsap.fromTo(slogan,
   {y: 0, autoAlpha: 1, duration: 1.4, overwrite: "auto", ease: "expo"}
 )
 
-
 // main-product heading 애니메이션
 gsap.timeline({
   scrollTrigger: {

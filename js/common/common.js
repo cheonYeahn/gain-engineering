@@ -6,13 +6,13 @@ const depth2 = document.querySelectorAll("#header .depth2");
 const hamburger = document.querySelector(".hamburger");
 
 const updateLogo = () => {
-  const logoSrc = header.classList.contains("scroll-down") ? "img/common/logo.svg" : "img/common/logo-w.svg";
+  const logoSrc = header.classList.contains("scroll-down") ? "/img/common/logo.svg" : "/img/common/logo-w.svg";
   headerLogo.setAttribute("src", logoSrc);
 };
 
 const showDepth2 = () => {
   header.classList.add("show-depth2", "bg-white");
-  headerLogo.setAttribute("src", "img/common/logo.svg");
+  headerLogo.setAttribute("src", "/img/common/logo.svg");
 
   depth2.forEach((el) => {
     const depth2List = depth2[1].querySelectorAll("li");
@@ -24,7 +24,7 @@ const hideDepth2 = () => {
   header.classList.remove("show-depth2", "bg-white");
   updateLogo();
   
-  depth2.forEach(el => el.style.height = `0`);
+  depth2.forEach(el => el.style.height = "0");
 };
 
 headerGnb.addEventListener("mouseover", showDepth2);
@@ -72,7 +72,30 @@ const toggleDepth2 = (index) => {
   sitemapDepth2[index].style.padding = isOpen ? "0.5rem" : "0 0.5rem";
 };
 
-sitemapDepth1.forEach((el, index) => el.addEventListener("click", (e) => {
-  e.preventDefault();
-  toggleDepth2(index);
-}));
+const sitemapClickEvent = () => {
+  sitemapDepth1.forEach((el, index) => el.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleDepth2(index);
+  }));
+};
+
+// 모바일 환경에서만 실행할 이벤트
+const delay = 300;
+let timer = null;
+
+const isMobile = (eventCallback) => {
+  const handleResize = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if(window.innerWidth <= 767) {
+        eventCallback();
+      }
+    }, delay);
+  };
+
+  handleResize();
+
+  window.addEventListener("resize", handleResize);
+};
+
+isMobile(sitemapClickEvent);

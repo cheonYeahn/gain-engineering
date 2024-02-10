@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+#greeting {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--size-100);
+}
+
+.greeting-img {
+  width: 45%;
+  height: 480px;
+  overflow: hidden;
+  background: url("/img/sub/test.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.greeting-desc {
+  width: 55%;
+}
+
+.greeting-desc h3 em {
+  color: var(--color-primary5);
+}
+
+.greeting-desc .para {
+  margin: var(--size-40) 0;
+  color: var(--color-gray5);
+  line-height: 2;
+  letter-spacing: -0.3px;
+}
+
+.greeting-desc .para p:not(:last-child) {
+  margin-bottom: var(--size-18);
+}
+
+.greeting-desc > p {
+  text-align: right;
+  font-weight: bold;
+}
+
+.greeting-desc p em {
+  font-size: var(--size-24);
+  letter-spacing: 5px;
+}
+
+/* 반응형 */
+@media (max-width:1510px) {
+  .lnb {
+    margin: 0;
+  }
+}
+
+@media (max-width:767px) {
+  .greeting-img,
+  .greeting-desc {
+    width: 100%;
+  }
+
+  #greeting {
+    flex-direction: column;
+    gap: var(--size-60);
+  }
+
+  .greeting-img {
+    height: 40vh;
+  }
+  
+  .greeting-desc .para {
+    margin: var(--size-24) 0;
+  }
+}

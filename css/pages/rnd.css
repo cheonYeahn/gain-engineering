@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+#rnd {
+  text-align: center;
+}
+
+.patent-list {
+  margin-top: var(--size-100);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--size-100) var(--size-60);
+}
+
+.patent-list li {
+  width: calc(calc(100% - var(--size-180)) / 4);
+}
+
+.patent-img {
+  width: 100%;
+  aspect-ratio: 425 / 589;
+  border: 1px solid var(--color-gray4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.patent-list li:nth-child(1) .patent-img {
+  background-image: url(/img/sub/patent1.jpg);
+}
+
+.patent-list li:nth-child(2) .patent-img {
+  background-image: url(/img/sub/patent2.jpg);
+}
+
+.patent-list li:nth-child(3) .patent-img {
+  background-image: url(/img/sub/patent3.jpg);
+}
+
+.patent-list li:nth-child(4) .patent-img {
+  background-image: url(/img/sub/patent4.jpg);
+}
+
+.patent-list li:nth-child(5) .patent-img {
+  background-image: url(/img/sub/patent5.jpg);
+}
+
+.patent-list li:nth-child(6) .patent-img {
+  background-image: url(/img/sub/patent6.jpg);
+}
+
+.patent-list li:nth-child(7) .patent-img {
+  background-image: url(/img/sub/patent7.jpg);
+}
+
+.patent-desc  {
+  padding-top: var(--size-18);
+}
+
+.patent-desc span  {
+  color: var(--color-gray5);
+}
+
+.patent-desc p  {
+  font-size: var(--size-18);
+}
+
+
+/* 반응형 */
+@media (max-width:767px) {
+  .box-shadow {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  #rnd {
+    text-align: left;
+  }
+
+  .patent-list {
+    margin-top: var(--size-100);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: var(--size-80) var(--size-20);
+  }
+
+  .patent-list li {
+    width: calc(calc(100% - var(--size-20)) / 2);
+  }
+
+  .patent-desc span  {
+    font-size: var(--size-12);
+  }
+  
+  .patent-desc p  {
+    font-size: 1rem;
+  }
+}
