@@ -43,6 +43,7 @@
   --color-gray3: #DEE0E3;
   --color-gray2: #ECEEF1;
   --color-gray1: #F3F5F8;
+  --color-red: #F94138;
 }
 
 body {
@@ -59,7 +60,7 @@ body {
 
 #header::after,
 #header .gnb .depth1 > li > a::after,
-#sitemap::after,
+.bg-logo::after,
 #sitemap .gnb .depth2 > li:not(:last-child)::after,
 #sitemap .gnb .depth1 > li > a::after,
 address p:not(:last-child)::after,
@@ -145,7 +146,7 @@ address,
 }
 
 #header .gnb .depth1 > li,
-#header .gnb .depth1 > li > a,
+.btn-toggle,
 .hamburger,
 #sitemap .gnb .depth2 > li,
 address p,
@@ -180,7 +181,7 @@ address p:not(:last-child)::after,
 }
 
 #header .gnb .depth1 > li > a::after,
-#sitemap.bg-logo::after {
+.bg-logo::after {
   right: 0;
 }
 
@@ -193,7 +194,7 @@ address p:not(:last-child)::after,
 
 #header .gnb .depth1 > li > a::after,
 .hamburger span:nth-child(3),
-#sitemap.bg-logo::after {
+.bg-logo::after {
   bottom: 0;
 }
 
@@ -201,6 +202,7 @@ address p:not(:last-child)::after,
 #header::after,
 .gnb a,
 .gnb a::after,
+.btn-toggle::after,
 .gnb .depth2,
 .hamburger,
 .hamburger span,
@@ -223,6 +225,12 @@ address p:not(:last-child)::after,
 .bg-white .hamburger span,
 .scroll-down .hamburger span {
   background-color: var(--color-gray9);
+}
+
+.bg-logo::after,
+#sitemap .gnb .depth1 > li > a::after {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-shadow {
@@ -267,8 +275,7 @@ address p:not(:last-child)::after,
 
 .bg-logo::after {
   aspect-ratio: 143 / 79;
-  background: url(/img/common/symbol.svg) no-repeat;
-  background-size: cover;
+  background-image: url(/img/common/symbol.svg);
   opacity: 0.1;
 }
 
@@ -333,7 +340,6 @@ address p:not(:last-child)::after,
 
 /* sitemap 보일 때 header set */
 .show-sitemap #header {
-  border: none;
   background-color: transparent;
 }
 
@@ -549,15 +555,14 @@ address p:not(:last-child)::after {
     font-size: var(--size-20);
   }
 
-  #sitemap .gnb .depth1 > li > a::after {
+  .btn-toggle::after {
     width: var(--size-14);
     height: var(--size-14);
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    background: url(/img/common/arrow-down.png) no-repeat;
-    background-size: cover;
+    background: url(/img/common/arrow-down.png);
   }
   
   #sitemap .gnb .depth2 {

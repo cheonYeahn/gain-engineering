@@ -48,12 +48,12 @@ const wrap = document.querySelector(".wrap");
 const sitemapDepth1 = document.querySelectorAll("#sitemap .depth1 > li > a");
 const sitemapDepth2 = document.querySelectorAll("#sitemap .depth2");
 
-const toggleSitemap = () => {
+const showSitemap = () => {
   hamburger.classList.toggle("close");
   wrap.classList.toggle("show-sitemap");
 };
 
-hamburger.addEventListener("click", toggleSitemap);
+hamburger.addEventListener("click", showSitemap);
 
 // 사이트맵 아코디언 메뉴 클릭 이벤트
 const toggleDepth2 = (index) => {
@@ -98,4 +98,29 @@ const isMobile = (eventCallback) => {
   window.addEventListener("resize", handleResize);
 };
 
-isMobile(sitemapClickEvent);
+// 모바일 환경 lnb 클릭 이벤트
+const lnbDepth1 = document.querySelector(".lnb .depth1 > li p");
+const lnbDepth2 = document.querySelector(".lnb .depth2");
+
+const lnbClickEvent = () => {
+  const depth2List = lnbDepth2.querySelectorAll("li");
+
+  lnbDepth1.addEventListener("click", () => {
+    if(lnbDepth1.classList.contains("open")) {
+      lnbDepth1.classList.remove("open");
+      lnbDepth2.style.height = "0"
+    } else {
+      lnbDepth1.classList.add("open");
+      lnbDepth2.style.height = `${depth2List.length * depth2List[0].offsetHeight + 16}px`;
+    }
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  isMobile(() => {
+    if(lnbDepth1) {
+      lnbClickEvent();
+    }
+    sitemapClickEvent();
+  });
+});
