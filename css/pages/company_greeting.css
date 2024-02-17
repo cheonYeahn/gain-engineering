@@ -12,7 +12,7 @@
   width: 45%;
   height: 480px;
   overflow: hidden;
-  background: url("/img/sub/test.jpg") no-repeat center;
+  background: url(/img/sub/greeting.jpg) no-repeat center;
   background-size: cover;
 }
 

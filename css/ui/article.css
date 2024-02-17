@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.news-detail .title,
+.news-detail .content {
+  padding: var(--size-32) var(--size-20);
+}
+
+.pagenation,
+.btn-origin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-origin,
+.btn-origin .icon,
+.btn-back {
+  transition: .3s ease;
+}
+
+.news-detail .title .date,
+.btn-origin {
+  color: var(--color-gray6);
+}
+
+.news-detail .title h4,
+.btn-back {
+  font-weight: bold;
+}
+
+.news-detail {
+  margin-top: var(--size-60);
+  margin-bottom: var(--size-40);
+  border-top: 1px solid var(--color-gray9);
+  border-bottom: 1px solid var(--color-gray9);
+}
+
+.news-detail .title {
+  border-bottom: 1px solid var(--color-gray4);
+}
+
+.news-detail .title h4 {
+  margin-bottom: 1rem;
+  font-size: var(--size-28);
+  letter-spacing: -0.3px;
+}
+
+.btn-origin {
+  gap: 0.5rem;
+}
+
+.btn-origin .icon {
+  width: var(--size-24);
+  height: var(--size-24);
+  position: relative;
+  border-radius: 100%;
+  background-color: var(--color-gray6);
+}
+
+.btn-origin .icon::after {
+  content: '';
+  width: var(--size-14);
+  height: var(--size-14);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(/img/common/arrow-slash.png) no-repeat center;
+  background-size: contain;
+}
+
+.btn-back {
+  padding: var(--size-14) var(--size-100);
+  border-radius: 0.5rem;
+  background-color: var(--color-primary5);
+  font-size: var(--size-18);
+  color: #fff;
+}
+
+/* hover set */
+@media (hover: hover) and (pointer: fine) {
+  .btn-origin:hover {
+    text-decoration: underline;
+  }
+  
+  .btn-origin:hover .icon {
+    background-color: var(--color-gray9);
+  }
+  
+  .btn-back:hover {
+    background-color: var(--color-gray9);
+  }
+}
+
+/* 반응형 */
+@media (max-width:767px) {
+  .news-detail .title,
+  .news-detail .content {
+    padding: var(--size-24) var(--size-12);
+  }
+
+  .news-detail .title h4 {
+    margin-bottom: 1rem;
+    font-size: clamp(var(--size-20), 5.8vw, var(--size-28));
+    letter-spacing: -0.3px;
+  }
+  
+  .pagenation {
+    flex-direction: column-reverse;
+    gap: var(--size-24);
+  }
+}

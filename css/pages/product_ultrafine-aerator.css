@@ -1,0 +1,85 @@
+#page-header {
+  background-image: url(/img/sub/product-page-header4.jpg);
+}
+
+/* main-visual */
+.visual-img {
+  background-image: url(/img/sub/product4.jpg);
+}
+
+/* feature */
+li:nth-child(1) .feature-img {
+  background-image: url(/img/sub/feature-ultrafine-aerator1.jpg);
+}
+
+li:nth-child(2) .feature-img {
+  background-image: url(/img/sub/feature-ultrafine-aerator2.jpg);
+}
+
+li:nth-child(3) .feature-img {
+  background-image: url(/img/sub/feature-ultrafine-aerator3.jpg);
+}
+
+/* adventages */
+.adventage-list li:last-child {
+  align-items: flex-start;
+}
+
+.adventage-list li:last-child span {
+  padding-top: 2px;
+}
+
+.adventage-list li:last-child p span {
+  display: inline-block; 
+  color: var(--color-gray5); 
+  font-size: 1rem; 
+  font-weight: normal;
+}
+
+/* specification */
+#specification .table > .standard > ul > li:first-child {
+  width: calc(100% / 3);
+}
+
+#specification .table > .standard > ul > li:last-child {
+  width: calc(calc(100% / 3) * 2);
+}
+
+/* process */
+.procedure {
+  justify-content: center;
+  gap: var(--size-60) var(--size-28);
+}
+
+.procedure li:nth-child(4),
+.procedure li:nth-child(5) {
+  order: 0;
+}
+
+.procedure li::after {
+  display: none;
+}
+
+.procedure li:nth-child(1) .procedure-img {
+  background-image: url(/img/sub/procedure-ultrafine-aerator1.jpg);
+}
+
+.procedure li:nth-child(2) .procedure-img {
+  background-image: url(/img/sub/procedure-ultrafine-aerator2.jpg);
+}
+
+.procedure li:nth-child(3) .procedure-img {
+  background-image: url(/img/sub/procedure-ultrafine-aerator3.jpg);
+}
+
+.procedure li:nth-child(4) .procedure-img {
+  background-image: url(/img/sub/procedure-ultrafine-aerator4.jpg);
+}
+
+.procedure li:nth-child(5) .procedure-img {
+  background-image: url(/img/sub/procedure-ultrafine-aerator5.jpg);
+}
+
+@media (max-width:767px) {
+  
+}

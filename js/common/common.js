@@ -79,25 +79,6 @@ const sitemapClickEvent = () => {
   }));
 };
 
-// 모바일 환경에서만 실행할 이벤트
-const delay = 300;
-let timer = null;
-
-const isMobile = (eventCallback) => {
-  const handleResize = () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      if(window.innerWidth <= 767) {
-        eventCallback();
-      }
-    }, delay);
-  };
-
-  handleResize();
-
-  window.addEventListener("resize", handleResize);
-};
-
 // 모바일 환경 lnb 클릭 이벤트
 const lnbDepth1 = document.querySelector(".lnb .depth1 > li p");
 const lnbDepth2 = document.querySelector(".lnb .depth2");
@@ -114,6 +95,30 @@ const lnbClickEvent = () => {
       lnbDepth2.style.height = `${depth2List.length * depth2List[0].offsetHeight + 16}px`;
     }
   });
+};
+
+// 모바일 환경에서만 실행할 이벤트
+const delay = 300;
+let timer = null;
+
+const isMobile = (eventCallback) => {
+  const handleResize = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if(window.innerWidth <= 767) {
+        if(lnbDepth1) {
+          lnbDepth2.style.height = "0";
+        }
+        eventCallback();
+      } else if(lnbDepth1) {
+        lnbDepth2.style.height = "fit-content";
+      }
+    }, delay);
+  };
+
+  handleResize();
+
+  window.addEventListener("resize", handleResize);
 };
 
 document.addEventListener("DOMContentLoaded", () => {

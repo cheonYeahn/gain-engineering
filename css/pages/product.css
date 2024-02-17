@@ -34,6 +34,7 @@
 .adventage-list li,
 #specification .table > li,
 #specification .table > li > :not(.category),
+#specification .table > .standard > ul li,
 .procedure {
   display: flex;
 }
@@ -52,6 +53,8 @@
 .feature-list li,
 .adventage-list li,
 #specification .table > li,
+#specification .table > .standard > ul,
+#specification .table > .standard > ul li,
 #video {
   align-items: center;
 }
@@ -60,11 +63,6 @@
 .adventage-list,
 .adventage-list li {
   gap: 1rem;
-}
-
-#product,
-.procedure li {
-  position: relative;
 }
 
 .adventage-list li,
@@ -94,7 +92,9 @@
 
 .visual-img,
 .feature-img,
-.procedure li::after {
+.detail-img,
+.procedure li::after,
+.procedure-img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -182,8 +182,17 @@ section h5,
   background-color: var(--color-gray1);
 }
 
+.adventage-list.line2 li {
+  align-items: flex-start;
+  line-height: 1.65;
+}
+
 .adventage-list li span {
   color: var(--color-primary7);
+}
+
+.adventage-list.line2 li span {
+  padding-top: 2px;
 }
 
 .adventage-list li p {
@@ -207,8 +216,17 @@ section h5,
   width: 200px;
 }
 
-#specification .table > li > :not(.category) {
+#specification .table > li > ul {
   width: calc(100% - 200px);
+}
+
+#specification .table > .standard > ul {
+  height: 80px;
+}
+
+#specification .table > .standard > ul li {
+  justify-content: center;
+  height: 100%;
 }
 
 .caution {
@@ -233,6 +251,7 @@ section h5,
 
 .detail-img {
   aspect-ratio: 2 / 1;
+  background-size: contain;
 }
 
 /* process */
@@ -242,6 +261,7 @@ section h5,
 
 .procedure li {
   width: calc(calc(100% - 120px) / 3);
+  position: relative;
 }
 
 .procedure li::after {
@@ -251,10 +271,7 @@ section h5,
   position: absolute;
   top: 35%;
   left: calc(100% + var(--size-20));
-  transform: rotate(-90deg);
-  border: 1px solid #000;
-  background-image: url(/img/common/arrow-down.png);
-  filter: invert(1);
+  background-image: url(/img/sub/arrow-procedure1.png);
 }
 
 .procedure li:nth-child(4) {
@@ -269,13 +286,13 @@ section h5,
   top: auto;
   bottom: -0.5rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(90deg);
 }
 
 .procedure li:nth-child(4):after,
 .procedure li:nth-child(5):after {
   left: -40px;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 
 .procedure li:nth-child(6):after {
@@ -391,7 +408,11 @@ section h5,
   }
 
   .feature-list li {
-    padding: var(--size-32) var(--size-24) var(--size-60);
+    padding: var(--size-32) var(--size-12) var(--size-60);
+  }
+
+  .feature-img {
+    min-width: auto;
   }
 
   .adventage-list {
@@ -421,14 +442,14 @@ section h5,
   }
   
   #specification .table > li{
-    width: 180%;
+    width: 1000px;
   }
 
   #specification .table > li .category {
     width: var(--size-180);
   }
   
-  #specification .table > li > :not(.category) {
+  #specification .table > li > ul {
     width: calc(100% - var(--size-180));
   }
 
