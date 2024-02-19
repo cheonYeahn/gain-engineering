@@ -93,7 +93,6 @@
 .visual-img,
 .feature-img,
 .detail-img,
-.procedure li::after,
 .procedure-img {
   background-repeat: no-repeat;
   background-position: center;
@@ -261,42 +260,6 @@ section h5,
 
 .procedure li {
   width: calc(calc(100% - 120px) / 3);
-  position: relative;
-}
-
-.procedure li::after {
-  content: '';
-  width: 1rem;
-  height: 1rem;
-  position: absolute;
-  top: 35%;
-  left: calc(100% + var(--size-20));
-  background-image: url(/img/sub/arrow-procedure1.png);
-}
-
-.procedure li:nth-child(4) {
-  order: 2;
-}
-
-.procedure li:nth-child(5) {
-  order: 1;
-}
-
-.procedure li:nth-child(3):after {
-  top: auto;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%) rotate(90deg);
-}
-
-.procedure li:nth-child(4):after,
-.procedure li:nth-child(5):after {
-  left: -40px;
-  transform: rotate(180deg);
-}
-
-.procedure li:nth-child(6):after {
-  display: none;
 }
 
 .procedure-desc h5 {
@@ -313,6 +276,10 @@ section h5,
 #video iframe {
   width: 70%;
   aspect-ratio: 16 / 9;
+}
+
+#video iframe:not(:last-child) {
+  margin-bottom: var(--size-60);
 }
 
   /* hover set */
@@ -468,16 +435,11 @@ section h5,
     padding: var(--size-60) 1rem;
   }
 
-  .procedure li:nth-child(4),
-  .procedure li:nth-child(5) {
-    order: 0;
-  }
-
-  .procedure li::after {
-    display: none;
-  }
-
   #product > section#video {
     padding-bottom: 0;
+  }
+
+  #video iframe:not(:last-child) {
+    margin-bottom: var(--size-32);
   }
 }

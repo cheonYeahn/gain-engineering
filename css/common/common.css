@@ -277,13 +277,13 @@ address p:not(:last-child)::after,
 
 /* header */
 #header {
-  border-bottom: 1px solid var(--color-gray4);
   background-color: rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 100;
 }
 
 #header::after {
+  border-top: 1px solid var(--color-gray4);
   z-index: -1;
 }
 

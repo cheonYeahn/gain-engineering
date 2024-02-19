@@ -25,39 +25,6 @@ li:nth-child(4) .feature-img {
 }
 
 /* process */
-.procedure {
-  justify-content: center;
-}
-
-.procedure li:nth-child(3)::after {
-  display: none;
-}
-
-.procedure li:nth-child(4)::after {
-  width: auto;
-  height: 120px;
-  aspect-ratio: 37 / 131;
-  display: block;
-  top: 0;
-  left: calc(100% + var(--size-24));
-  transform: rotate(0);
-  background-image: url(/img/sub/arrow-procedure2.png);
-}
-
-.procedure li:nth-child(5)::after {
-  left: calc(100% + var(--size-20));
-}
-
-.procedure li:nth-child(5)::before {
-  content: '';
-  height: 112px;
-  aspect-ratio: 47 / 122;
-  position: absolute;
-  right: calc(100% + var(--size-24));
-  background: url(/img/sub/arrow-procedure3.png) no-repeat center;
-  background-size: contain;
-}
-
 .procedure li:nth-child(1) .procedure-img {
   background-image: url(/img/sub/procedure-dead-animal-handler1.jpg);
 }
@@ -78,8 +45,6 @@ li:nth-child(4) .feature-img {
   background-image: url(/img/sub/procedure-dead-animal-handler5.jpg);
 }
 
-@media (max-width:767px) {
-  .procedure li:nth-child(5)::before {
-    display: none;
-  }
+.procedure li:nth-child(6) .procedure-img {
+  background-image: url(/img/sub/procedure-dead-animal-handler6.jpg);
 }

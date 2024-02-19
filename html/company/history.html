@@ -31,6 +31,52 @@
   <link rel="stylesheet" href="/css/common/common.css">
   <link rel="stylesheet" href="/css/common/common_sub.css">
   <link rel="stylesheet" href="/css/pages/company_history.css">
+  <!-- script -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="/js/common/common.js"></script>
+  <script defer src="/js/common/common_sub.js"></script>
+  <script defer src="/js/pages/company.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const historyScrollTrigger = (item) => {
+        return gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "top center",
+            end: "bottom center",
+            scrub: true
+          }
+        });
+      };
+      historyScrollTrigger(".progress-guide").to(".progress-bar", {height: "100%"});
+      
+      gsap.utils.toArray(".timeline-list > li").forEach((item, index) => {
+        if(index === 0) {
+          gsap.fromTo(item.querySelector("h3"), 
+            {x: 100, autoAlpha: 0},
+            {x: 0, autoAlpha: 1, color: "#424195"}
+          );
+        } else {
+          gsap.fromTo(item.querySelector("h3"), 
+            {x: 100, autoAlpha: 0},
+            {
+              x: 0,
+              autoAlpha: 1,
+              color: "#424195",
+              scrollTrigger: {
+                trigger: item,
+                start: window.innerWidth <= 756 ? "top 85%" : "top 75%",
+                end: window.innerWidth <= 756 ? "35% 85%" : "bottom 75%",
+                markers: true,
+                scrub: true,
+              }
+            }
+          );
+        }
+      });
+    });
+  </script>
   <title>가인엔지니어링</title>
 </head>
 <body>
@@ -128,12 +174,12 @@
         </ul>
         <ul class="sns">
           <li>
-            <a href="#">
+            <a href="https://www.youtube.com/@gain-engineering" target="_blank">
               <img src="/img/common/sns-youtube.png" alt="가인엔지니어링 유튜브 채널">
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://blog.naver.com/kduu159" target="_blank">
               <img src="/img/common/sns-blog.png" alt="가인엔지니어링 네이버 블로그">
             </a>
           </li>
@@ -261,52 +307,5 @@
     </footer>
     <!-- 푸터 끝 -->
   </div>
-
-  <!-- script -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script defer src="/js/common/common.js"></script>
-  <script defer src="/js/common/common_sub.js"></script>
-  <script defer src="/js/pages/company.js"></script>
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      const historyScrollTrigger = (item) => {
-        return gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: "top center",
-            end: "bottom center",
-            scrub: true
-          }
-        });
-      };
-      historyScrollTrigger(".progress-guide").to(".progress-bar", {height: "100%"});
-      
-      gsap.utils.toArray(".timeline-list > li").forEach((item, index) => {
-        if(index === 0) {
-          gsap.fromTo(item.querySelector("h3"), 
-            {x: 100, autoAlpha: 0},
-            {x: 0, autoAlpha: 1, color: "#424195"}
-          );
-        } else {
-          gsap.fromTo(item.querySelector("h3"), 
-            {x: 100, autoAlpha: 0},
-            {
-              x: 0,
-              autoAlpha: 1,
-              color: "#424195",
-              scrollTrigger: {
-                trigger: item,
-                start: window.innerWidth <= 756 ? "top 85%" : "top 75%",
-                end: window.innerWidth <= 756 ? "35% 85%" : "bottom 75%",
-                markers: true,
-                scrub: true,
-              }
-            }
-          );
-        }
-      });
-    });
-  </script>
 </body>
 </html>
