@@ -469,7 +469,8 @@ address p:not(:last-child)::after {
     color: #fff;
   }
 
-  address p a:hover {
+  address p a:hover,
+  .contact-num:hover {
     text-decoration: underline;
   }
 }

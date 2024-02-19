@@ -357,6 +357,7 @@
 
 .banner-call-list {
   margin: auto 0;
+  z-index: 1;
 }
 
 .banner-call-list li {
@@ -498,7 +499,6 @@
   .product-list li {
     padding: var(--size-100) 0;
     gap: var(--size-32);
-    border: 1px solid #000;
   }
 
   .product-desc {
